@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const fileInput = document.getElementById('image-upload');
     const thumbnailsContainer = document.getElementById('thumbnails-container');
     const promptInput = document.getElementById('prompt-input');
-    const apiKeyInput = document.getElementById('api-key-input');
+    const apiKeyInput = ‘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’;
     const generateBtn = document.getElementById('generate-btn');
     const btnText = generateBtn.querySelector('.btn-text');
     const spinner = generateBtn.querySelector('.spinner');
@@ -79,11 +79,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 核心修改区域开始 ---
     generateBtn.addEventListener('click', async () => {
-        if (!apiKeyInput.value.trim()) {
+    /*    if (!apiKeyInput.value.trim()) {
             alert('请输入 OpenRouter API 密钥');
             return;
         }
-
+        */
         if (selectedFiles.length === 0) {
             alert('请选择至少一张图片');
             return;
