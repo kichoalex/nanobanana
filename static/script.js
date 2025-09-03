@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!apiKeyInput.value.trim()) {
             //alert('请输入 OpenRouter API 密钥');
             //return;
-            apiKeyInput.value = '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';
+            apiKeyInput.value = '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';
         }
 
         if (selectedFiles.length === 0) {
