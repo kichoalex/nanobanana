@@ -80,12 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 核心修改区域开始 ---
     generateBtn.addEventListener('click', async () => {
-        if (!apiKeyInput.value.trim()) {
+      /*  if (!apiKeyInput.value.trim()) {
             //alert('请输入 OpenRouter API 密钥');
-            apiKeyInput.value = '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'
-            //return;
+            //apiKeyInput.value = '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'
+            return;
         }
-
+*/
         if (selectedFiles.length === 0) {
             alert('请选择至少一张图片');
             return;
@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             // 2. 等待所有文件转换完成
             const base64Images = await Promise.all(conversionPromises);
-            
+            const kicapi = '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'
             // 3. 发送包含 images 数组的请求
             const response = await fetch('/generate', {
                 method: 'POST',
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     prompt: promptInput.value,
                     images: base64Images, // 注意：这里从 'image' 改为了 'images'，并且值是一个数组
-                    apikey: apiKeyInput.value
+                    apikey: kicapi
                 })
             });
 
