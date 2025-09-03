@@ -80,8 +80,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 核心修改区域开始 ---
     generateBtn.addEventListener('click', async () => {
         if (!apiKeyInput.value.trim()) {
-            alert('请输入 OpenRouter API 密钥');
-            return;
+            //alert('请输入 OpenRouter API 密钥');
+            //return;
+            apiKeyInput.value = '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';
         }
 
         if (selectedFiles.length === 0) {
