@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', () => {
     const uploadArea = document.querySelector('.upload-area');
     const fileInput = document.getElementById('image-upload');
@@ -79,12 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- 核心修改区域开始 ---
     generateBtn.addEventListener('click', async () => {
-        /*
         if (!apiKeyInput.value.trim()) {
-            alert('请输入 OpenRouter API 密钥');
+            //alert('请输入 OpenRouter API 密钥');
+            apiKeyInput.value.trim() = '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'
             return;
         }
-        */
 
         if (selectedFiles.length === 0) {
             alert('请选择至少一张图片');
@@ -114,7 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify({
                     prompt: promptInput.value,
                     images: base64Images, // 注意：这里从 'image' 改为了 'images'，并且值是一个数组
-                    apikey: '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'
+                    apikey: apiKeyInput.value
                 })
             });
 
